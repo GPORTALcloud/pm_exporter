@@ -48,8 +48,8 @@ jobs:
         with:
           context: .
           push: true
-          tags: >
-            docker.pkg.github.com/${{ github.repository }}:${{ github.sha }}
-            docker.pkg.github.com/${{ github.repository }}:latest
+          tags: |
+            docker.pkg.github.com/${{ github.repository }}/pm_exporter:${{ github.sha }}
+            docker.pkg.github.com/${{ github.repository }}/pm_exporter:latest
             gportal/pm_exporter:${{ github.sha }}
             gportal/pm_exporter:latest
