@@ -62,7 +62,7 @@ func (r *RedfishApi) GetHost() string {
 // note: if there is no power supply health check will result in 1
 // only if state is critical / != null and != OK it will result in 0
 func checkOK(ok string) int {
-	if ok == "OK" || ok == "" {
+	if ok == "OK" || ok == "" || ok == "Unknown" {
 		return 1
 	}
 	return 0
