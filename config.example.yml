@@ -1,21 +1,6 @@
 ---
 
-platform_managements:
-  - host: https://192.168.0.1
-    username: root
-    password: toor
-    type: IDRAC
-    labels:
-      funny: labels
-  - host: https://192.168.0.2
-    username: root
-    password: toor
-    type: IDRAC
-    labels:
-      customer: 1337
-  - host: https://192.168.0.3
-    username: root
-    password: toor
-    type: IDRAC
-    labels:
-      internal_name: host00123
+# Redfish Default Credentials
+redfish:
+  username: root
+  password: toor

@@ -1,13 +1,22 @@
 package api
 
 import (
-	"net/http"
-	"time"
+	"github.com/g-portal/redfish_exporter/pkg/drivers/redfish"
+	"github.com/prometheus/client_golang/prometheus"
 )
 
-var client = &http.Client{Timeout: 15 * time.Second}
-
 type Client interface {
-	GetHost() string
-	FetchInventoryMetrics() error
+	Connect(host, username, password string, tlsVerify bool) error
+	GetMetrics() (*prometheus.Registry, error)
+	Disconnect() error
+}
+
+func NewClient(host, username, password string, tlsVerify bool) (Client, error) {
+	client := &redfish.Redfish{}
+	err := client.Connect(host, username, password, tlsVerify)
+	if err != nil {
+		return nil, err
+	}
+
+	return client, nil
 }
