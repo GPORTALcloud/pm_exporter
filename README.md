@@ -1,13 +1,3 @@
 # Redfish Prometheus Exporter
 
-### This is WIP.
-
-Redfish Exporter is providing generic metrics fetched from Redfish endpoints.
-
-Tested with:
-* HPE ILO4
-* HPE ILO5
-* Dell iDRAC 8
-* Dell iDRAC 9
-* AsRockRack
-* SuperMicro SuperServer
+## Abandoned in favour of https://github.com/G-PORTAL/redfish_exporter.
